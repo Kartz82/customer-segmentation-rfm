@@ -180,7 +180,7 @@ Retention declines predictably across customer cohorts, highlighting opportuniti
 
 ---
 
-## PNG Reports
+## Reports
 
 ### Churn Risk Analysis
 ![Churn Risk Analysis](reports/04_churn_risk.png)
