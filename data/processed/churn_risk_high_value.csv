@@ -1,0 +1,90 @@
+customer_id,recency,frequency,monetary,r_score,f_score,m_score,segment,churn_risk
+12346.0,326,12,77556.46,2,5,5,At Risk,High Value At Risk
+12378.0,130,2,5416.32,3,2,5,Potential Loyalists,High Value At Risk
+12422.0,96,17,5231.8,3,5,5,Loyal Customers,High Value At Risk
+12482.0,576,29,23691.4,1,5,5,Cannot Lose Them,High Value At Risk
+12510.0,143,9,5178.02,3,5,5,Loyal Customers,High Value At Risk
+12590.0,211,2,9864.26,2,2,5,Hibernating,High Value At Risk
+12625.0,212,4,5164.88,2,3,5,At Risk,High Value At Risk
+12643.0,128,12,8350.42,3,5,5,Loyal Customers,High Value At Risk
+12755.0,281,11,9030.66,2,5,5,At Risk,High Value At Risk
+12758.0,117,7,9903.24,3,4,5,Loyal Customers,High Value At Risk
+12835.0,428,41,6043.31,1,5,5,Cannot Lose Them,High Value At Risk
+12918.0,626,1,10953.5,1,1,5,Hibernating,High Value At Risk
+12980.0,158,21,16245.78,3,5,5,Loyal Customers,High Value At Risk
+13027.0,114,19,17335.2,3,5,5,Loyal Customers,High Value At Risk
+13082.0,126,21,7335.75,3,5,5,Loyal Customers,High Value At Risk
+13093.0,276,55,54943.65,2,5,5,At Risk,High Value At Risk
+13162.0,122,16,9275.49,3,5,5,Loyal Customers,High Value At Risk
+13206.0,400,13,8377.32,2,5,5,At Risk,High Value At Risk
+13564.0,144,37,17249.55,3,5,5,Loyal Customers,High Value At Risk
+13593.0,108,14,5523.6900000000005,3,5,5,Loyal Customers,High Value At Risk
+13615.0,319,8,6272.53,2,4,5,At Risk,High Value At Risk
+13687.0,438,1,11880.84,1,1,5,Hibernating,High Value At Risk
+13715.0,281,17,8483.29,2,5,5,At Risk,High Value At Risk
+13722.0,132,10,5635.41,3,5,5,Loyal Customers,High Value At Risk
+13734.0,509,4,6701.640000000001,1,3,5,Cannot Lose Them,High Value At Risk
+13802.0,139,19,26259.11,3,5,5,Loyal Customers,High Value At Risk
+13869.0,123,10,8111.57,3,5,5,Loyal Customers,High Value At Risk
+13902.0,632,5,34095.26,1,4,5,Cannot Lose Them,High Value At Risk
+13931.0,96,11,5257.38,3,5,5,Loyal Customers,High Value At Risk
+13935.0,597,3,6116.92,1,3,5,Cannot Lose Them,High Value At Risk
+13952.0,218,14,12823.521,2,5,5,At Risk,High Value At Risk
+14016.0,162,11,11403.41,3,5,5,Loyal Customers,High Value At Risk
+14028.0,550,3,10396.5,1,3,5,Cannot Lose Them,High Value At Risk
+14045.0,109,16,11313.029999999999,3,5,5,Loyal Customers,High Value At Risk
+14063.0,438,9,22710.2,1,5,5,Cannot Lose Them,High Value At Risk
+14081.0,302,10,5370.1,2,5,5,At Risk,High Value At Risk
+14091.0,654,2,9530.08,1,2,5,Hibernating,High Value At Risk
+14105.0,239,5,5988.83,2,4,5,At Risk,High Value At Risk
+14134.0,383,15,11123.35,2,5,5,At Risk,High Value At Risk
+14154.0,239,8,6460.7,2,4,5,At Risk,High Value At Risk
+14160.0,610,7,8421.47,1,4,5,Cannot Lose Them,High Value At Risk
+14210.0,106,16,5861.52,3,5,5,Loyal Customers,High Value At Risk
+14249.0,411,12,5625.461,1,5,5,Cannot Lose Them,High Value At Risk
+14439.0,320,5,9443.04,2,4,5,At Risk,High Value At Risk
+14442.0,205,7,5367.0199999999995,2,4,5,At Risk,High Value At Risk
+14459.0,155,2,5375.741,3,2,5,Potential Loyalists,High Value At Risk
+14461.0,148,13,6713.5,3,5,5,Loyal Customers,High Value At Risk
+14828.0,197,13,9839.460000000001,2,5,5,At Risk,High Value At Risk
+14855.0,119,7,6520.3,3,4,5,Loyal Customers,High Value At Risk
+14918.0,116,9,5955.81,3,5,5,Loyal Customers,High Value At Risk
+14930.0,109,6,5246.63,3,4,5,Loyal Customers,High Value At Risk
+15032.0,256,8,13780.65,2,4,5,At Risk,High Value At Risk
+15098.0,182,3,39916.5,3,3,5,Loyal Customers,High Value At Risk
+15202.0,420,3,6001.49,1,3,5,Cannot Lose Them,High Value At Risk
+15260.0,100,25,9188.23,3,5,5,Loyal Customers,High Value At Risk
+15332.0,366,6,6553.74,2,4,5,At Risk,High Value At Risk
+15369.0,492,11,6251.26,1,5,5,Cannot Lose Them,High Value At Risk
+15372.0,137,8,6017.06,3,4,5,Loyal Customers,High Value At Risk
+15413.0,692,5,6798.72,1,4,5,Cannot Lose Them,High Value At Risk
+15480.0,116,5,6279.0,3,4,5,Loyal Customers,High Value At Risk
+15581.0,121,38,7794.59,3,5,5,Loyal Customers,High Value At Risk
+15641.0,105,12,5345.55,3,5,5,Loyal Customers,High Value At Risk
+15749.0,235,3,44534.3,2,3,5,At Risk,High Value At Risk
+15760.0,631,2,13916.34,1,2,5,Hibernating,High Value At Risk
+15768.0,116,34,15601.09,3,5,5,Loyal Customers,High Value At Risk
+15808.0,306,21,18409.93,2,5,5,At Risk,High Value At Risk
+15812.0,107,12,5201.47,3,5,5,Loyal Customers,High Value At Risk
+16180.0,100,13,16249.87,3,5,5,Loyal Customers,High Value At Risk
+16320.0,172,6,5628.99,3,4,5,Loyal Customers,High Value At Risk
+16456.0,99,13,6862.91,3,5,5,Loyal Customers,High Value At Risk
+16546.0,291,5,5606.47,2,4,5,At Risk,High Value At Risk
+16550.0,109,18,9435.13,3,5,5,Loyal Customers,High Value At Risk
+16553.0,163,33,16644.01,3,5,5,Loyal Customers,High Value At Risk
+16754.0,372,29,67502.47,2,5,5,At Risk,High Value At Risk
+16919.0,156,24,5125.91,3,5,5,Loyal Customers,High Value At Risk
+17085.0,123,28,7891.41,3,5,5,Loyal Customers,High Value At Risk
+17146.0,106,13,5860.24,3,5,5,Loyal Customers,High Value At Risk
+17204.0,175,9,5504.6900000000005,3,5,5,Loyal Customers,High Value At Risk
+17230.0,264,18,9924.95,2,5,5,At Risk,High Value At Risk
+17409.0,185,10,7793.51,3,5,5,Loyal Customers,High Value At Risk
+17448.0,497,46,14556.97,1,5,5,Cannot Lose Them,High Value At Risk
+17457.0,127,14,5984.8099999999995,3,5,5,Loyal Customers,High Value At Risk
+17504.0,206,18,9565.12,2,5,5,At Risk,High Value At Risk
+17850.0,372,155,56600.08,2,5,5,At Risk,High Value At Risk
+18052.0,565,1,10877.18,1,2,5,Hibernating,High Value At Risk
+18087.0,98,17,14761.519999999999,3,5,5,Loyal Customers,High Value At Risk
+18178.0,129,11,6103.74,3,5,5,Loyal Customers,High Value At Risk
+18231.0,192,28,6880.97,2,5,5,At Risk,High Value At Risk
+18260.0,173,23,9962.11,3,5,5,Loyal Customers,High Value At Risk
