@@ -40,7 +40,7 @@ The project uses the UCI Online Retail II dataset, containing transactional reco
 - Products: 4,000+
 - Countries: 43
 - Observation Period: 25 months
-- Revenue Analyzed: £3M+
+- Revenue Analyzed: £2.4M+
 
 Data is sourced from the previously constructed Customer Intelligence Data Warehouse.
 
@@ -87,7 +87,7 @@ Each dimension is ranked and converted into behavioral customer segments.
 Measures how revenue is distributed across customer segments.
 
 Example insight:
-- Champions represent only **6.6%** of customers while generating **33.4%** of total revenue.
+- Champions represent only **22.1%%** of customers while generating **68.35%** of total revenue.
 
 This helps prioritize retention investment and loyalty programs.
 
@@ -109,7 +109,7 @@ Risk Categories:
 - Active
 
 Example outcome:
-- Identified **£100K+** in revenue exposure from high-value customers showing prolonged inactivity.
+- Identified **£171,101+** in revenue exposure across 15 high-value customers showing 90+ day inactivity.
 
 ### 5. Cohort Retention Analytics
 Tracks monthly customer cohorts and measures retention over subsequent periods.
@@ -196,3 +196,11 @@ Retention declines predictably across customer cohorts, highlighting opportuniti
 
 ### Cohort Retention Heatmap
 ![Cohort Retention Heatmap](reports/03_cohort_retention_heatmap.png)
+
+
+## Tech Stack
+- Python · pandas · NumPy
+- PostgreSQL 15 · Docker
+- SQL (Window Functions, CTEs, Cohort Queries)
+- Plotly (static chart exports)
+- Power BI / Looker Studio
