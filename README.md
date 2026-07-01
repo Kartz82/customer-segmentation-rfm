@@ -3,7 +3,7 @@
 ![Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=flat-square&logo=python&logoColor=white)
 ![pandas](https://img.shields.io/badge/pandas-analytics-150458?style=flat-square&logo=pandas&logoColor=white)
 ![Plotly](https://img.shields.io/badge/Plotly-visuals-3F4F75?style=flat-square&logo=plotly&logoColor=white)
-![SQL](https://img.shields.io/badge/SQL-analytics-4479A1?style=flat-square&logo=postgresql&logoColor=white)
+![SQL](https://img.shields.io/badge/SQL-analytics-4479A1?style=flat-square)
 
 ## Portfolio Highlights
 
