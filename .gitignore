@@ -1,9 +1,18 @@
-cat > .gitignore << 'EOF'
-# Data files
-data/raw/
-data/processed/*.csv
+# Python environments and caches
 venv/
+.venv/
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
+
+# Local/editor files
 .DS_Store
-EOF
+.vscode/
+.idea/
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# Local environment files
+.env
+.env.*

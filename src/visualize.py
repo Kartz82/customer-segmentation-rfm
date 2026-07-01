@@ -1,5 +1,7 @@
 import argparse
 import os
+import shutil
+from pathlib import Path
 
 import numpy as np
 import pandas as pd
@@ -7,10 +9,11 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 
 
-SEG = "segment_summary.csv"
-COH = "cohort_retention.csv"
-CHURN = "churn_risk.csv"
-OUT = "./reports"
+PROCESSED_DIR = Path("data/processed")
+SEG = PROCESSED_DIR / "segment_summary.csv"
+COH = PROCESSED_DIR / "cohort_retention.csv"
+CHURN = PROCESSED_DIR / "churn_risk.csv"
+OUT = Path("reports")
 
 BACKGROUND = "#050A14"
 PANEL = "#0B1220"
@@ -39,13 +42,53 @@ SEGMENT_COLORS = {
 
 
 def ensure_output_dir():
-    os.makedirs(OUT, exist_ok=True)
+    OUT.mkdir(parents=True, exist_ok=True)
+
+
+def validate_inputs():
+    required = [SEG, COH, CHURN]
+    missing = [str(path) for path in required if not path.exists()]
+    if missing:
+        raise FileNotFoundError(
+            "Missing processed input file(s): "
+            + ", ".join(missing)
+            + ". Run python src/rfm_segmentation.py first."
+        )
+
+
+def find_brave_executable() -> Path | None:
+    candidates = [
+        os.environ.get("BRAVE_BROWSER_PATH"),
+        "/Applications/Brave Browser.app/Contents/MacOS/Brave Browser",
+        str(Path.home() / "Applications/Brave Browser.app/Contents/MacOS/Brave Browser"),
+    ]
+
+    for command_name in ("brave-browser", "brave", "brave-browser-stable"):
+        executable = shutil.which(command_name)
+        if executable:
+            candidates.append(executable)
+
+    for candidate in candidates:
+        if not candidate:
+            continue
+        path = Path(candidate).expanduser()
+        if path.is_file() and os.access(path, os.X_OK):
+            return path
+
+    return None
 
 
 def configure_browser_export():
-    brave_path = "/Applications/Brave Browser.app/Contents/MacOS/Brave Browser"
-    if os.path.exists(brave_path):
-        os.environ.setdefault("BROWSER_PATH", brave_path)
+    brave_path = find_brave_executable()
+    if brave_path is None:
+        raise FileNotFoundError(
+            "Brave Browser executable was not found. Install Brave or set "
+            "BRAVE_BROWSER_PATH to the Brave executable path before running "
+            "python src/visualize.py."
+        )
+
+    os.environ["BROWSER_PATH"] = str(brave_path)
+    print(f"Using Brave for Plotly/Kaleido export: {brave_path}")
 
 
 def dark_layout(title, subtitle=None, margin=None):
@@ -84,6 +127,11 @@ def dark_axis(title=None, ticksuffix=None, range=None):
 def create_revenue_concentration_v2():
     seg = pd.read_csv(SEG).sort_values("total_revenue", ascending=True)
     colors = [SEGMENT_COLORS.get(s, BLUE) for s in seg["segment"]]
+    top = seg.sort_values("total_revenue", ascending=False).iloc[0]
+    subtitle = (
+        f"{top['segment']} represent {top['customer_pct']:.1f}% of customers "
+        f"and generate {top['revenue_pct']:.1f}% of total revenue"
+    )
 
     fig = go.Figure()
     fig.add_trace(
@@ -122,7 +170,7 @@ def create_revenue_concentration_v2():
     fig.update_layout(
         **dark_layout(
             "Revenue Concentration by Customer Segment",
-            "Champions represent 6.6% of customers but generate 33.4% of total revenue",
+            subtitle,
         ),
         barmode="group",
         bargap=0.26,
@@ -144,7 +192,7 @@ def create_revenue_concentration_v2():
         height=460,
         width=900,
     )
-    fig.write_image(f"{OUT}/01_revenue_concentration.png", scale=2)
+    fig.write_image(OUT / "01_revenue_concentration.png", scale=2)
 
 
 def create_segment_bubble_v2():
@@ -199,7 +247,7 @@ def create_segment_bubble_v2():
         height=500,
         width=900,
     )
-    fig.write_image(f"{OUT}/02_segment_bubble.png", scale=2)
+    fig.write_image(OUT / "02_segment_bubble.png", scale=2)
 
 
 def create_cohort_retention_heatmap_v2():
@@ -273,7 +321,7 @@ def create_cohort_retention_heatmap_v2():
         height=520,
         width=980,
     )
-    fig.write_image(f"{OUT}/03_cohort_retention_heatmap.png", scale=2)
+    fig.write_image(OUT / "03_cohort_retention_heatmap.png", scale=2)
 
 
 def create_churn_risk_v2():
@@ -369,7 +417,7 @@ def create_churn_risk_v2():
     )
     fig.update_yaxes(title_text="Customers", row=1, col=1)
     fig.update_yaxes(title_text="Lifetime Value", tickprefix="£", row=1, col=2)
-    fig.write_image(f"{OUT}/04_churn_risk.png", scale=2)
+    fig.write_image(OUT / "04_churn_risk.png", scale=2)
 
 
 def create_segment_scorecard_v2():
@@ -429,11 +477,12 @@ def create_segment_scorecard_v2():
         height=420,
         width=980,
     )
-    fig.write_image(f"{OUT}/05_segment_scorecard.png", scale=2)
+    fig.write_image(OUT / "05_segment_scorecard.png", scale=2)
 
 
 def create_all_reports():
     ensure_output_dir()
+    validate_inputs()
     configure_browser_export()
     create_revenue_concentration_v2()
     create_segment_bubble_v2()
